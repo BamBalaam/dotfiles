@@ -1,0 +1,6 @@
+[user]
+	name = André Madeira Cortes
+	useconfigonly = true
+
+[core]
+	excludesfile = ~/.gitignore_global
