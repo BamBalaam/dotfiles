@@ -40,7 +40,9 @@ additional_packages = [
     'sublime_zk',
     # https://github.com/adambullmer/sublime_docblockr_python
     'DocBlockr_Python',
-    'TerminalView'
+    'TerminalView',
+    'A File Icon',
+    'ayu'
 ]
 
 """
@@ -54,8 +56,8 @@ user_config = {
 
     # Style!
     # Uncomment the following lines to overwrite the basic appearance and color
-    # "color_scheme": "Packages/Materialize/schemes/Material One Dark.tmTheme",
-    # "theme": "Material Brogrammer.sublime-theme",
+    "color_scheme": "Packages/ayu/ayu-mirage.tmTheme",
+    "theme": "ayu-mirage.sublime-theme",
     "font_face": "Hack",
     "font_size": 11,
 
@@ -93,5 +95,8 @@ user_config = {
         "sublime_zk": {
             "insert_links_with_titles": "true"
         },
+        "ayu": {
+            "ui_font_roboto_mono": "false",
+        }
     }
 }
