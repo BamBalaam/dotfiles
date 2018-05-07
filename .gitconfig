@@ -5,3 +5,6 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nano
+
+[alias]
+	co = checkout
