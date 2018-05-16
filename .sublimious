@@ -13,7 +13,6 @@ nuke_everything = True
 # Check sublimious/layers for all available layers
 layers = [
     'core',
-
     # 'osx',
     'git',
     'python',
@@ -30,19 +29,17 @@ Everything that is not part of a layer.
 These packages will be installed through package control
 """
 additional_packages = [
-    'orgmode',
-    'SideBarEnhancements',
-    'requirementstxt',
-    'Pretty JSON',
-    'Gitignored File Excluder',
-    'PlainTasks',
-    # https://github.com/renerocksai/sublime_zk
-    'sublime_zk',
-    # https://github.com/adambullmer/sublime_docblockr_python
-    'DocBlockr_Python',
-    'TerminalView',
     'A File Icon',
-    'ayu'
+    'ayu',
+    'DocBlockr_Python',
+    'Git blame',
+    'Gitignored File Excluder',
+    'orgmode',
+    'PowerCursors',
+    'Pretty JSON',
+    'requirementstxt',
+    'SideBarEnhancements',
+    'sublime_zk',
 ]
 
 """
@@ -93,7 +90,8 @@ user_config = {
             "markdown_live_preview_on_open": "true",
         },
         "sublime_zk": {
-            "insert_links_with_titles": "true"
+            "insert_links_with_titles": "true",
+            "color_scheme": "Packages/sublime_zk/Monokai Extended-zk.tmTheme"
         },
         "ayu": {
             "ui_font_roboto_mono": "false",
