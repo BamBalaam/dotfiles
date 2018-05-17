@@ -155,14 +155,26 @@ bindsym --release $mod+shift+s exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/screen
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Switch between monitor configurations
 bindsym $mod+Shift+m exec --no-startup-id ~/.i3/scripts/monitor.sh
+
+#########
+# POWER #
+#########
+
+set $mode_power power: (l)ogout (r)eboot (s)hutdown
+bindsym $mod+Shift+e mode "$mode_power"
+mode "$mode_power" {
+    bindsym l mode "default", exec --no-startup-id ~/.i3/scripts/exit.sh logout
+    bindsym r mode "default", exec --no-startup-id ~/.i3/scripts/exit.sh reboot
+    bindsym s mode "default", exec --no-startup-id ~/.i3/scripts/exit.sh shutdown
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 ##########
 # i3 BAR #
