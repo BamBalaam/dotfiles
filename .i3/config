@@ -149,6 +149,9 @@ bindsym $mod+Shift+Escape exec i3lock -c 000000
 # Start dmenu
 bindsym $mod+d exec rofi -show run
 
+# Start pass rofi
+bindsym $mod+p exec rofi -modi "pass:~/.config/rofi/scripts/pass.sh" -show pass
+
 # Screenshot rofi
 bindsym --release $mod+shift+s exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/screenshots/' -s
 
