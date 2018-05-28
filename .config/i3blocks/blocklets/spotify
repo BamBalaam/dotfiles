@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) .i3/scripts/spotify.sh play ;; # left click
+    4) .i3/scripts/spotify.sh next ;; # scroll up
+    5) .i3/scripts/spotify.sh prev ;; # scroll down
+esac
+
+if .i3/scripts/spotify.sh status | grep 'Paused' > /dev/null; then
+    printf '⏸ ' # fa-pause
+else
+    printf '▶ ' # fa-play
+fi
+.i3/scripts/spotify.sh current-oneline
