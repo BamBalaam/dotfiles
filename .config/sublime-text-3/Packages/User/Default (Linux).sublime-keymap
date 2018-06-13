@@ -1,0 +1,6 @@
+[
+    { "keys": ["alt+up"], "command": "swap_line_up" },
+    { "keys": ["alt+down"], "command": "swap_line_down" },
+    { "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" },
+
+]
