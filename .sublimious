@@ -13,15 +13,9 @@ nuke_everything = True
 # Check sublimious/layers for all available layers
 layers = [
     'core',
-    # 'osx',
     'git',
     'python',
-    # 'javascript',
     'markdown',
-    # 'coffee',
-    # 'php',
-    # 'elixir',
-    # 'clojure'
 ]
 
 """
@@ -39,7 +33,7 @@ additional_packages = [
     'Pretty JSON',
     'requirementstxt',
     'SideBarEnhancements',
-    'sublime_zk',
+    'sublack',
 ]
 
 """
@@ -73,6 +67,10 @@ user_config = {
     "ensure_newline_at_eof_on_save": True,
     # "trim_trailing_white_space_on_save": True,
 
+    # Extras
+    "spell_check": True,
+    "hot_exit": False,
+
     # Sublimious comes pre-configured with a lot of good settings
     # But if you are not happy with them, overwrite them here
     # Take the package name from the <Preferences> -> <Package Settings> menu
@@ -89,12 +87,12 @@ user_config = {
         "MarkdownLivePreview": {
             "markdown_live_preview_on_open": "true",
         },
-        "sublime_zk": {
-            "insert_links_with_titles": "true",
-            "color_scheme": "Packages/sublime_zk/Monokai Extended-zk.tmTheme"
-        },
         "ayu": {
             "ui_font_roboto_mono": "false",
+        },
+        "sublack": {
+            "black_line_length": 80,
+            "black_skip_string_normalization": True,
         }
     }
 }
