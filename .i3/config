@@ -79,12 +79,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
@@ -96,21 +90,25 @@ bindsym $mod+minus scratchpad show
 # WORKSPACES #
 ##############
 
-set $workspace1 1: Main
-set $workspace2 2: Browsers
-set $workspace3 3: Sublime
-set $workspace8 8: Spotify
-set $workspace9 9: Slack
-set $workspace10 10: Ranger
+set $workspace1 1: Browser Work
+set $workspace2 2: Browser Media
+set $workspace3 3: Code one
+set $workspace4 4: Code two
+set $workspace5 5: Code three
+set $workspace6 6: Planning
+set $workspace7 7: Spotify
+set $workspace8 8: Slack
+set $workspace9 9
+set $workspace10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
@@ -119,10 +117,10 @@ bindsym $mod+0 workspace $workspace10
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
@@ -130,11 +128,6 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # move workspace to screen
 bindsym $mod+Shift+o move workspace to output left
 bindsym $mod+Shift+p move workspace to output right
-
-assign [class="Google-chrome"] $workspace2
-assign [class="Sublime_text"] $workspace3
-assign [class="Spotify"] $workspace8
-assign [class="Slack"] $workspace9
 
 #########
 # UTILS #
@@ -164,6 +157,8 @@ bindsym $mod+Shift+r restart
 # Switch between monitor configurations
 bindsym $mod+Shift+m exec --no-startup-id ~/.i3/scripts/monitor.sh
 
+bindsym $mod+m exec --no-startup-id i3-sensible-terminal -e ranger
+
 #########
 # POWER #
 #########
@@ -187,6 +182,7 @@ mode "$mode_power" {
 # finds out, if available)
 bar {
     position top
+    tray_output eDP-1
     status_command i3blocks
 }
 
@@ -219,11 +215,18 @@ exec_always feh --bg-scale ~/.i3/wallpaper/wp.jpg
 # STARTUP #
 ###########
 
-exec --no-startup-id i3-msg 'workspace 1: Main; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 2: Browsers; exec /usr/bin/google-chrome'
+assign [class="Google-chrome"] $workspace1
+exec --no-startup-id i3-msg 'workspace 1: Browser Work; exec /usr/bin/google-chrome'
+exec --no-startup-id i3-msg 'workspace 2: Browser Media; exec /usr/bin/firefox'
+
+exec --no-startup-id i3-msg 'workspace 7: Planning; exec subl ~/Dropbox/Orgzly'
+exec --no-startup-id i3-msg 'workspace 7: Planning; exec subl ~/orgwiki'
+
+for_window [class="Spotify"] move to workspace $workspace8
 exec --no-startup-id i3-msg 'workspace 8: Spotify; exec /usr/bin/spotify'
+
+assign [class="Slack"] $workspace9
 exec --no-startup-id i3-msg 'workspace 9: Slack; exec /usr/bin/slack'
-exec --no-startup-id i3-msg 'workspace 10: Ranger; exec i3-sensible-terminal -e ranger'
 
 exec_always --no-startup-id ~/.i3/scripts/keymap.sh
 
