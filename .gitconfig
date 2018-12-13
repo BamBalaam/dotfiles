@@ -1,10 +1,11 @@
 [user]
-	name = André Madeira Cortes
-	useconfigonly = true
-
+    name = André Madeira Cortes
+    useconfigonly = true
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = nano
-
+    excludesfile = ~/.gitignore_global
+    editor = nano
 [alias]
-	co = checkout
+    co = checkout
+    shorty = status --short --branch
+    init-work = !git init && git config user.email "andre.madeiracortes@famoco.com" && git commit -m “root” --allow-empty
+    init-personal = !git init && git config user.email "amadeiracortes@gmail.com" && git commit -m “root” --allow-empty
