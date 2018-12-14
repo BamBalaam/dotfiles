@@ -219,14 +219,14 @@ assign [class="Google-chrome"] $workspace1
 exec --no-startup-id i3-msg 'workspace 1: Browser Work; exec /usr/bin/google-chrome'
 exec --no-startup-id i3-msg 'workspace 2: Browser Media; exec /usr/bin/firefox'
 
-exec --no-startup-id i3-msg 'workspace 7: Planning; exec subl ~/Dropbox/Orgzly'
-exec --no-startup-id i3-msg 'workspace 7: Planning; exec subl ~/orgwiki'
+exec --no-startup-id i3-msg 'workspace 6: Planning; exec subl ~/Dropbox/Orgzly'
+exec --no-startup-id i3-msg 'workspace 6: Planning; exec subl ~/orgwiki'
 
-for_window [class="Spotify"] move to workspace $workspace8
-exec --no-startup-id i3-msg 'workspace 8: Spotify; exec /usr/bin/spotify'
+for_window [class="Spotify"] move to workspace $workspace7
+exec --no-startup-id i3-msg 'workspace 7: Spotify; exec /usr/bin/spotify'
 
-assign [class="Slack"] $workspace9
-exec --no-startup-id i3-msg 'workspace 9: Slack; exec /usr/bin/slack'
+assign [class="Slack"] $workspace8
+exec --no-startup-id i3-msg 'workspace 8: Slack; exec /usr/bin/slack'
 
 exec_always --no-startup-id ~/.i3/scripts/keymap.sh
 
