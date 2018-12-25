@@ -6,7 +6,7 @@
 
 # Fonts
 # font pango:monospace 8
-font pango:DejaVu Sans Mono 8
+font pango:Fira Code Medium 9
 
 # Mod key (Windows key)
 set $mod Mod4
@@ -134,7 +134,7 @@ bindsym $mod+Shift+p move workspace to output right
 #########
 
 # New terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # Lock screen
 bindsym $mod+Shift+Escape exec i3lock -c 000000
@@ -157,7 +157,7 @@ bindsym $mod+Shift+r restart
 # Switch between monitor configurations
 bindsym $mod+Shift+m exec --no-startup-id ~/.i3/scripts/monitor.sh
 
-bindsym $mod+m exec --no-startup-id i3-sensible-terminal -e ranger
+bindsym $mod+m exec --no-startup-id urxvt -e ranger
 
 #########
 # POWER #
