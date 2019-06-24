@@ -223,7 +223,7 @@ exec --no-startup-id i3-msg 'workspace 6: Planning; exec subl ~/Dropbox/Orgzly'
 exec --no-startup-id i3-msg 'workspace 6: Planning; exec subl ~/orgwiki'
 
 for_window [class="Spotify"] move to workspace $workspace7
-exec --no-startup-id i3-msg 'workspace 7: Spotify; exec /usr/bin/spotify'
+exec --no-startup-id i3-msg 'workspace 7: Spotify; exec /snap/bin/spotify'
 
 assign [class="Slack"] $workspace8
 exec --no-startup-id i3-msg 'workspace 8: Slack; exec /usr/bin/slack'
