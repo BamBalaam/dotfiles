@@ -155,7 +155,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Switch between monitor configurations
-bindsym $mod+Shift+m exec --no-startup-id ~/.i3/scripts/monitor.sh
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/rofi/scripts/monitor.sh
 
 bindsym $mod+m exec --no-startup-id urxvt -e ranger
 
