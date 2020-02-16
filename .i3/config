@@ -92,12 +92,12 @@ bindsym $mod+minus scratchpad show
 
 set $workspace1 1: Browser Work
 set $workspace2 2: Browser Media
-set $workspace3 3: Code one
-set $workspace4 4: Code two
-set $workspace5 5: Code three
+set $workspace3 3: Code One
+set $workspace4 4: Code Two
+set $workspace5 5: Code Three
 set $workspace6 6: Planning
-set $workspace7 7: Spotify
-set $workspace8 8: Slack
+set $workspace7 7
+set $workspace8 8
 set $workspace9 9
 set $workspace10 10
 
@@ -215,19 +215,10 @@ exec_always feh --bg-scale ~/.i3/wallpaper/wp.jpg
 # STARTUP #
 ###########
 
-assign [class="Google-chrome"] $workspace1
 exec --no-startup-id i3-msg 'workspace 1: Browser Work; exec /usr/bin/firefox -p Famoco'
 exec --no-startup-id i3-msg 'workspace 2: Browser Media; exec /usr/bin/firefox -p Personal'
-
 exec --no-startup-id i3-msg 'workspace 6: Planning; exec subl ~/Dropbox/'
 
-for_window [class="Spotify"] move to workspace $workspace7
-exec --no-startup-id i3-msg 'workspace 7: Spotify; exec /snap/bin/spotify'
-
-assign [class="Slack"] $workspace8
-exec --no-startup-id i3-msg 'workspace 8: Slack; exec /usr/bin/slack'
-
 exec_always --no-startup-id ~/.i3/scripts/keymap.sh
-
-exec --no-startup-id dropbox start
 exec_always nm-applet
+exec --no-startup-id dropbox start
