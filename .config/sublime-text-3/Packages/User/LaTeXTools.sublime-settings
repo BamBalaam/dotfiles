@@ -1,0 +1,7 @@
+{
+	"builder": "script",
+	"builder_settings" : {
+		"linux" : {"script_commands": "cd $file_path/.. && docker-compose up"}
+	},
+	"viewer": "zathura",
+}
