@@ -24,6 +24,7 @@ plugins=(
   python
   ssh-agent
   sublime
+  taskwarrior
   zsh-autosuggestions
 )
 
@@ -37,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/aliases-work.zsh
+source $HOME/.zsh/aliases-starwarrior.zsh
 
 # Exports
 

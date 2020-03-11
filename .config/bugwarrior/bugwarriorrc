@@ -1,0 +1,22 @@
+[general]
+targets=gerrit,jira
+
+[gerrit]
+service = gerrit
+gerrit.base_uri = $GERRIT_URL
+gerrit.username = $GERRIT_USERNAME
+gerrit.password = @oracle:eval:pass Famoco/APIs/Gerrit
+gerrit.description_template = (bw)PR#{{gerritid}} - {{gerritsummary}}
+gerrit.add_tags = Gerrit
+
+[jira]
+service = jira
+jira.base_uri = $JIRA_URL
+jira.username = $JIRA_USERNAME
+jira.password = @oracle:eval:pass Famoco/APIs/JIRA
+jira.import_labels_as_tags = True
+jira.import_sprints_as_tags = True
+jira.label_template = {{label}}
+jira.query = assignee = currentUser() and Sprint in openSprints()
+jira.description_template = (bw)Is#{{jiraid}} - {{jirasummary}}
+jira.add_tags = JIRA
