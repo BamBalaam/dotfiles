@@ -8,6 +8,7 @@ gerrit.username = $GERRIT_USERNAME
 gerrit.password = @oracle:eval:pass Famoco/APIs/Gerrit
 gerrit.description_template = (bw)PR#{{gerritid}} - {{gerritsummary}}
 gerrit.add_tags = Gerrit
+gerrit.query = is:open+((reviewer:self+-owner:self+-is:ignored)+OR+assignee:self)
 
 [jira]
 service = jira
@@ -17,6 +18,6 @@ jira.password = @oracle:eval:pass Famoco/APIs/JIRA
 jira.import_labels_as_tags = True
 jira.import_sprints_as_tags = True
 jira.label_template = {{label}}
-jira.query = assignee = currentUser() and Sprint in openSprints()
+jira.query = assignee = currentUser() and Sprint in openSprints() and status != "In Review" and status != "In Testing" and status != "Done"
 jira.description_template = (bw)Is#{{jiraid}} - {{jirasummary}}
 jira.add_tags = JIRA
