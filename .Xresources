@@ -1,5 +1,5 @@
 ! Colors
-*background:   [97]#282a36
+*background:   #282a36
 *foreground:   #eff0eb
 *cursorColor:  #9aedfe
 
@@ -20,5 +20,5 @@
 *color7:      #eff0eb
 *color15:     #eff0eb
 
-URxvt*font: xft:Fira Code:style=Retina:pixelsize=14:antialias=true:hinting=true
+URxvt.font: xft:Fira Code:style=Retina:pixelsize=14:antialias=true:hinting=true xft:Noto Emoji:pixelsize=13
 URxvt.scrollBar: false

@@ -1,0 +1,4 @@
+configuration {
+terminal: "urxvt";
+}
+@theme "/usr/share/rofi/themes/Monokai.rasi"

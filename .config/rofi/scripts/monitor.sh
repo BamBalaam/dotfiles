@@ -6,8 +6,8 @@ TITLES=()
 COMMANDS=()
 MODES=()
 
-EXTERNAL_OUTPUT="DP-1-1"
-EXTERNAL_OUTPUT_2="DP-1-3"
+EXTERNAL_OUTPUT="DP-1-3"
+EXTERNAL_OUTPUT_2="DP-1-1"
 TV_OUTPUT="DP-1"
 INTERNAL_OUTPUT="eDP-1"
 
@@ -60,6 +60,22 @@ COMMANDS[6]="xrandr \
              --output $INTERNAL_OUTPUT --auto \
              --output $EXTERNAL_OUTPUT --auto --right-of $INTERNAL_OUTPUT \
              --output $EXTERNAL_OUTPUT_2 --auto --right-of $EXTERNAL_OUTPUT --rotate left \
+             --output $TV_OUTPUT --off"
+
+# HOME MODE
+TILES[7]="HOME"
+COMMANDS[7]="xrandr \
+             --output $INTERNAL_OUTPUT --auto \
+             --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT \
+             --output $EXTERNAL_OUTPUT_2 --auto --left-of $EXTERNAL_OUTPUT --rotate normal \
+             --output $TV_OUTPUT --off"
+
+# HOME-ROTATION MODE
+TILES[8]="HOME-ROTATION"
+COMMANDS[8]="xrandr \
+             --output $INTERNAL_OUTPUT --auto \
+             --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT --rotate left \
+             --output $EXTERNAL_OUTPUT_2 --auto --left-of $EXTERNAL_OUTPUT \
              --output $TV_OUTPUT --off"
 
 # Generate entries, where first is key.
