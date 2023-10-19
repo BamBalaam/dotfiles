@@ -23,9 +23,14 @@ interval=10
 min_width=CPU: 100.00%
 
 [battery]
-label=⚡
-#instance=1
+command=~/.config/i3blocks/blocklets/battery
+label=🔋
 interval=30
+
+[brightness-block]
+command=~/.config/i3blocks/blocklets/brightness
+label=☀️
+interval=1
 
 [monitor-mode]
 command=~/.config/i3blocks/blocklets/monitor-mode

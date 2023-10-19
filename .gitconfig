@@ -10,3 +10,8 @@
     init-work = !git init && git config user.email "andre.madeiracortes@famoco.com" && git commit -m “root” --allow-empty
     init-personal = !git init && git config user.email "amadeiracortes@gmail.com" && git commit -m “root” --allow-empty
     diff-loose-branches = !sh -c 'git log --left-right --cherry-pick --oneline $1...$2 > diff-branch.diff & echo See diff-branch.diff' -
+    stash-show = stash show -p
+[grep]
+    extendedRegexp = true
+[diff]
+    algorithm = patience

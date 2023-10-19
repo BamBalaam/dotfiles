@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ ! -e /tmp/brightness.dat ]]; then
+    touch /tmp/brightness.dat
+    echo 1.0 > /tmp/brightness.dat
+fi
+
+cat /tmp/brightness.dat
+
+case $BLOCK_BUTTON in
+    4) .i3/scripts/brightness.sh up ;; # scroll up
+    5) .i3/scripts/brightness.sh down ;; # scroll down
+esac
